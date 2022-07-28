@@ -1,0 +1,370 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.nav_wrapper {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  z-index: 1;
+  gap: 10px;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.nav_wrapper a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hero_img {
+  width: 1000px;
+  position: absolute;
+  right: 0;
+  top: 100px;
+}
+
+.hero_container {
+  height: 500px;
+  width: 50%;
+  padding: 20px;
+  margin: 10px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero_container .title_container {
+  text-align: center;
+  position: relative;
+  top: 150px;
+}
+
+.hero_container .title_container .title {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.hero_container .title_container .subtitle {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.hero_container .about {
+  width: 45%;
+  padding: 20px;
+  align-self: start;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.hero_container .title_container .search_bar {
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid grey;
+  font-size: 16px;
+  width: 430px;
+}
+
+.MuiSelect-icon {
+  fill: white;
+}
+
+.books_container {
+  margin: 50px auto;
+}
+
+.books_menu_container {
+  width: 90%;
+  margin: 20px auto;
+  padding: 60px;
+  text-align: center;
+  background: rgb(213 205 205 / 20%);
+  border-radius: 5px;
+}
+
+.search_result_container {
+  min-height: 500px;
+}
+
+.search_result_container .title {
+  color: green;
+  padding: 5px;
+  margin-left: 40px;
+}
+
+.books_menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  justify-items: start;
+  gap: 30px;
+}
+
+.books_menu_title {
+  text-align: start;
+  font-size: 22px;
+  font-weight: bold;
+  color: grey;
+  margin: 20px;
+  margin-left: 100px;
+}
+
+.book_tile_container {
+  padding: 26px;
+  background: white;
+  display: flex;
+  flex: column;
+  gap: 10px;
+}
+
+.book_tile_name {
+}
+
+.book_tile_price {
+}
+
+.book_tile_img {
+  width: 100%;
+  height: 100%;
+}
+
+.book_wrapper {
+  width: 60%;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.book_description {
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  line-height: 25px;
+  color: #454242;
+}
+
+.book_wrapper img {
+  width: 200px;
+  height: 270px;
+}
+.book_wrapper .book_details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: end;
+  position: relative;
+  bottom: 20px;
+}
+
+.book_wrapper .book_details .book_title {
+  font-size: 30px;
+  letter-spacing: 2.5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.book_wrapper .book_details .book_author {
+  color: #3a5fb0;
+  text-decoration: underline;
+}
+
+.book_wrapper .book_details .book_genre * {
+  display: inline-block;
+  margin-right: 5px;
+  color: #617269;
+}
+
+.book_wrapper .book_details .book_price {
+  color: darkgreen;
+}
+
+.book_summary_container {
+  width: 70%;
+  margin: 50px auto;
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  box-shadow: 2px 5px 0.1px 1px rgba(212, 114, 114, 0.1);
+  padding: 15px;
+}
+
+.book_summary_container * {
+  text-align: center;
+}
+
+.book_summary_container .title {
+  margin: 10px 0;
+}
+
+.books_from_same_author {
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.books_from_same_author .title {
+  padding: 10px;
+  font-size: 20px;
+  color: grey;
+  font-weight: "bold";
+}
+
+.cart_button_container {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.my_cart_container {
+  width: 60%;
+  margin: 20px auto;
+  padding-bottom: 20px;
+}
+
+.my_cart_container .cart_row {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px grey solid;
+  padding: 30px;
+}
+
+.my_cart_container .cart_row_head {
+  color: grey;
+  font-weight: bold;
+}
+
+.my_cart_container .book_details {
+  text-align: center;
+}
+
+.my_cart_container .book_details * {
+  margin: 10px 0;
+}
+
+.my_cart_container .book_details .title {
+  color: rgb(25, 25, 25);
+}
+
+.my_cart_container .book_details .author {
+  color: grey;
+}
+
+.my_cart_container .book_details .price {
+  color: darkgreen;
+}
+
+.checkout_form_container {
+  width: 90%;
+  max-width: 450px;
+  padding: 50px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkout_form_container form {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.checkout_form_container form input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.checkout_form_container form label {
+  color: darkslategray;
+  font: 15px;
+}
+
+.admin_container {
+  min-height: 100vh;
+  background-color: #e6e1e1;
+}
+
+.admin_dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 40px;
+  padding: 50px;
+  justify-content: space-around;
+}
+
+.admin_dashboard .tab {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(57, 250, 57);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px 2px rgb(0 0 0 / 20%);
+  height: 130px;
+  color: white;
+}
+
+.admin_dashboard .tab .tab_title {
+  font-size: 12px;
+}
+
+.admin_dashboard .tab .tab_value {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.admin_table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.admin_table tr {
+  border: 1px solid gray;
+}
+
+.admin_table tr td {
+  padding: 20px 10px;
+  text-align: left;
+}
+
+.admin_table th {
+  font-weight: 400;
+  text-align: left;
+  padding: 10px;
+}
+
+.admin_table td {
+  font-weight: lighter;
+}
