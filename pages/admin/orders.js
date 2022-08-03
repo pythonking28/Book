@@ -39,7 +39,6 @@ const OrderStatus = (props) => {
       className="change_status"
       onChange={dispatchOrder}
       name="change status"
-      onChange={dispatchOrder}
       disabled={status === "completed" ? true : false}
       value={status}
     >

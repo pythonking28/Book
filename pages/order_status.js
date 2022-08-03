@@ -81,9 +81,9 @@ export default function OrderStatus(props) {
               </div>
               {status === "in progress" && (
                 <div className="status_info">
-                  Your order was received at {order.time}. We'll contact you
-                  soon to confirm your order & will dispatch the books to you as
-                  soon as possible.
+                  Your order was received at {order.time}. We&apos;ll contact
+                  you soon to confirm your order and will dispatch the books to
+                  you as soon as possible.
                 </div>
               )}
             </li>

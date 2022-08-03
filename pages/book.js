@@ -32,7 +32,10 @@ export default function Book(props) {
           <div className="book_title">{book.title}</div>
           <div className="book_author">
             {book.authors.split(",").map((author) => (
-              <Link href={`/search?s=${author}&mode=author`}>
+              <Link
+                key={`author_${author}`}
+                href={`/search?s=${author}&mode=author`}
+              >
                 <a>{author} </a>
               </Link>
             ))}
