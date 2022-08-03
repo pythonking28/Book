@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import BookMenu from "../components/book_menu";
 import { search_books } from "../db/db";
 import ErrorIcon from "@mui/icons-material/Error";
+import Head from "next/head";
 
 const EmptySearchResult = (props) => {
   return (
@@ -19,6 +20,9 @@ export default function SearchResults(props) {
   const books = props.search_results;
   return (
     <>
+      <Head>
+        <title>{props.search_query} | Results</title>
+      </Head>
       <div
         style={{
           fontWeight: "bold",
