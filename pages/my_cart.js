@@ -5,6 +5,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CheckoutForm from "../components/checkout_form";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import Head from "next/head";
 
 export default function MyCart(props) {
   const [checkoutFormShown, setCheckoutFormShown] = useState(false);
@@ -14,6 +15,9 @@ export default function MyCart(props) {
   const cart = useSelector((state) => state.bookStore.cart);
   return (
     <>
+      <Head>
+        <title>My cart | One More Chapter</title>
+      </Head>
       <div className="my_cart_container">
         <div
           style={{

@@ -78,7 +78,7 @@ export default function Navbar() {
   });
   return (
     <>
-      {router.asPath != "/admin/orders" && (
+      {!router.asPath.match(/admin/) && (
         <Box sx={{ flexGrow: 1 }}>
           <AppBar
             sx={{ backgroundColor: "rgba(0,0,0,0.05);", color: "#373535" }}

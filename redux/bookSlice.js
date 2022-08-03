@@ -26,9 +26,12 @@ export const BookSlice = createSlice({
       state.cart.totalItemsCount += 1;
       state.cart.totalPrice += book.price;
     },
+    clearCart(state) {
+      state.cart = initialState.cart;
+    },
   },
 });
 
-export const { addToCart } = BookSlice.actions;
+export const { addToCart, clearCart } = BookSlice.actions;
 
 export default BookSlice.reducer;

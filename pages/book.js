@@ -1,4 +1,4 @@
-import {search_books, fetch_book_by_isbn} from '../db/db';
+import { search_books, fetch_book_by_isbn } from "../db/db";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/ShoppingCart";
 import { Rating } from "react-simple-star-rating";
@@ -6,6 +6,7 @@ import BookMenu from "../components/book_menu";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/bookSlice";
+import Head from "next/head";
 
 export default function Book(props) {
   const { book } = props;
@@ -15,6 +16,11 @@ export default function Book(props) {
   };
   return (
     <>
+      <Head>
+        <title>
+          {book.title} | {book.authors}
+        </title>
+      </Head>
       <div className="book_wrapper">
         <div className="book_img">
           <img
@@ -26,7 +32,10 @@ export default function Book(props) {
           <div className="book_title">{book.title}</div>
           <div className="book_author">
             {book.authors.split(",").map((author) => (
-              <Link href={`/search?s=${author}&mode=author`}>
+              <Link
+                key={`author_${author}`}
+                href={`/search?s=${author}&mode=author`}
+              >
                 <a>{author} </a>
               </Link>
             ))}
@@ -88,7 +97,9 @@ export async function getServerSideProps(context) {
   const books_by_same_author = await search_books(book[0].authors);
   const props = {
     book: book[0],
-    books_by_same_author: books_by_same_author.filter(b => b.isbn != book[0].isbn)
+    books_by_same_author: books_by_same_author.filter(
+      (b) => b.isbn != book[0].isbn
+    ),
   };
   return {
     props,

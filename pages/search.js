@@ -2,14 +2,15 @@ import { useRouter } from "next/router";
 import BookMenu from "../components/book_menu";
 import { search_books } from "../db/db";
 import ErrorIcon from "@mui/icons-material/Error";
+import Head from "next/head";
 
 const EmptySearchResult = (props) => {
   return (
     <div style={{ textAlign: "center", width: 600, margin: "80px auto" }}>
       <ErrorIcon sx={{ fontSize: 250, fill: "rgba(0, 0, 0, 0.5)" }} />
       <div style={{ marginTop: 20 }}>
-        Sorry, we couldn't find anything for "
-        <i style={{ color: "grey" }}>{props.search_query}</i>"
+        Sorry, we couldn&apos;t find anything for &apos;
+        <i style={{ color: "grey" }}>{props.search_query}</i>&apos;
       </div>
     </div>
   );
@@ -19,6 +20,9 @@ export default function SearchResults(props) {
   const books = props.search_results;
   return (
     <>
+      <Head>
+        <title>{props.search_query} | Results</title>
+      </Head>
       <div
         style={{
           fontWeight: "bold",
